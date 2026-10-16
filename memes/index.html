@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Local Image</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f4f4f4;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Your Random Image</h1>
+
+    <!-- JavaScript will dynamically insert the local image src here -->
+    <div id="imageContainer"></div>
+
+    <script>
+        // 1. List your local image file names exactly as they are saved
+        const images = [
+            "image1.jpg",
+            "image2.png",
+            "image3.jpeg",
+            "photo4.webp",
+            "vacation5.jpg"
+        ];
+
+        // 2. Pick a random index from the array
+        const randomIndex = Math.floor(Math.random() * images.length);
+        const selectedImage = images[randomIndex];
+
+        // 3. Insert the image directly into the HTML container
+        document.getElementById("imageContainer").innerHTML = `
+            <img src="${selectedImage}" alt="Random Local Image">
+        `;
+    </script>
+
+</body>
+</html>
